@@ -7,7 +7,7 @@
     "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets",
     "start": "npm run build-css & nodemon -e html,css,js app.js"
   },
-  "author": "gabriel@fullstackacademy.com",
+  "author": "Leon Daniel Thorne <ldthorne@brandeis.edu>",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^2.9.34",
