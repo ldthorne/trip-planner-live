@@ -1,20 +1,9 @@
 $('.add-btn').on('click', function(){
-	//console.log(this.id);
-	if(this.id === 'btn_addHotel') {
-		var $newLi = createLI('#hotelSelect');
-		$('#hotelList').append($newLi);
-		addEventToButton($newLi);
-	}
-	else if(this.id === 'btn_addRestaurant') {
-		var $newLi = createLI('#restaurantSelect');
-		$('#restaurantList').append($newLi);
-		addEventToButton($newLi);
-	}
-	else if(this.id === 'btn_addActivity') {
-		var $newLi = createLI('#activitySelect');
-		$('#activityList').append($newLi);
-		addEventToButton($newLi);
-	}
+	var $this = $(this);
+	console.dir($this);
+	var sectionName = $this[0].id.slice(7).toLowerCase();
+	var $newLi = $('#' + sectionName + 'List').append(createLI('#' + sectionName + 'Select'));
+	addEventToButton($newLi);
 });
 
 function createLI(btnId) {
@@ -27,7 +16,3 @@ function addEventToButton(element) {
 		this.parentNode.remove();
 	});
 }
-
-// $('#hotelList').on('click','.remove', function(){
-// 	console.dir(this.parent);
-// });
